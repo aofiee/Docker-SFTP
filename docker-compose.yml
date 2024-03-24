@@ -1,0 +1,19 @@
+version: '3.7'
+
+services:
+  sftp:
+    image: atmoz/sftp
+    ports:
+      - "2222:22"
+    volumes:
+      - ./data:/home/tpa/upload
+    environment:
+      SFTP_USERS: "root:password:1001"  # username:password:uid
+    networks:
+        - matching-interface@internal
+        - matching-interface-application-controller
+networks:
+  matching-interface@internal:
+    external: true
+  matching-interface-application-controller:
+    external: true
