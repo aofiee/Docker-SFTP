@@ -6,9 +6,19 @@ services:
     ports:
       - "2222:22"
     volumes:
-      - ./data:/home/tpa/upload
+      - ./data:/home
     environment:
-      SFTP_USERS: "root:password:1001"  # username:password:uid
+      SFTP_USERS: 
+        94000000001:password:1001
+        94000000002:password:1002
+        94000000003:password:1003
+        94000000004:password:1004
+        94000000005:password:1005
+        94000000006:password:1006
+        94000000007:password:1007
+        94000000008:password:1008
+        94000000009:password:1009
+        94000000010:password:1010
     networks:
         - matching-interface@internal
         - matching-interface-application-controller
